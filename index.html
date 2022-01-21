@@ -15,12 +15,12 @@
 </head>
 
 <body>
-  <h2>無限文字列<h2>\n
-  <label for "inputLength">長さ<label>
-  <input type="number" id="inputLength">\n
-  <label for "inputCharacter">使用する文字<label>
-  <input type="text" id="inputCharacter">\n
-  <input type="button" id="createButton" value="作成">\n
+  <h2>無限文字列<h2><br>
+  <label for "inputLength">長さ<label><br>
+  <input type="number" id="inputLength"><br>
+  <label for "inputCharacter">使用する文字<label><br>
+  <input type="text" id="inputCharacter"><br>
+  <input type="button" id="createButton" value="作成"><br>
   <input type="text" readonly="true"　value="ABCDEFG" id="output">
   
   <script>
@@ -28,6 +28,7 @@
     var character = document.getElementById("inputCharacter");
     const button = document.getElementById("createButton");
     var output = document.getElementById("output");
+    output.value = "ここに結果を表示";
     button.addEventListener('click', createString);
     function createString() {
       var string = "";
