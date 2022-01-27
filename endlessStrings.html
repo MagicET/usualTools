@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+
+  <title>無限文字列</title>
+
+  <style>
+    h2 {
+      font-family: sans-serif;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <h2>無限文字列<h2>
+  <label for "inputLength">長さ:<label>
+  <input type="number" id="inputLength" placeholder="長さを入力"><br>
+  <label for "inputCharacter">使用する文字:<label>
+  <input type="text" id="inputCharacter" placeholder="使用する文字を入力"><br>
+  <input type="button" id="createButton" value="作成" onClick="createString()"><br>
+  <input type="text" readonly="true"　value="ABCDEFG" id="output" placeholder="作成した文字が表示されます">
+  
+  <script>
+    var length = document.getElementById("inputLength");
+    var character = document.getElementById("inputCharacter");
+    const button = document.getElementById("createButton");
+    var output = document.getElementById("output");
+    output.value = "ここに結果を表示";
+    function createString() {
+      /*var string = "";
+      for (var step = 0; step < Number(length.value); step++) {
+        string = string + character.value.substr(Math.floor(Math.random() * character.value.length), 1);
+      }
+      output.value = string;*/
+      alert(character.value.substr(Math.floor(Math.random() * character.value.length)));
+    }
+  </script>
+</body>
+</html>
