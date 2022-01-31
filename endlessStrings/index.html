@@ -28,13 +28,13 @@
     var character = document.getElementById("inputCharacter");
     const button = document.getElementById("createButton");
     var output = document.getElementById("output");
-    output.value = "ここに結果を表示";
+    output.innerHTML = "ここに結果を表示";
     function createString() {
       var string = "";
       for (var step = 0; step < Number(length.value); step++) {
         string = string + character.value.substr(Math.floor(Math.random() * character.value.length),1);
       }
-      output.value = string;
+      output.innerHTML = string;
       //alert(character.value.substr(Math.floor(Math.random() * character.value.length),1));
     }
   </script>
