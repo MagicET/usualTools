@@ -21,7 +21,7 @@
   <label for "inputCharacter">使用する文字:<label>
   <input type="text" id="inputCharacter" placeholder="使用する文字を入力"><br>
   <button id="createButton" onClick="createString()">作成</button><br>
-  <p id="output">ここに結果が表示されます</p>
+  <p id="output">ここに結果が表示されます<button onClick="copy()">コピー</button></p>
   
   <script>
     var length = document.getElementById("inputLength");
@@ -34,8 +34,13 @@
       for (var step = 0; step < Number(length.value); step++) {
         string = string + character.value.substr(Math.floor(Math.random() * character.value.length),1);
       }
-      output.innerHTML = string;
+      output.innerHTML = string + <button onClick="copy()">コピー</button>;
       //alert(character.value.substr(Math.floor(Math.random() * character.value.length),1));
+    }
+    function copy() {
+      var copyText = output.value;
+      copyText.select();
+      document.execCommand("copy");
     }
   </script>
 </body>
