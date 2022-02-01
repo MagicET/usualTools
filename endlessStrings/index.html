@@ -29,8 +29,9 @@
     const button = document.getElementById("createButton");
     var output = document.getElementById("output");
     output.innerHTML = "ここに結果を表示";
+    var string = "";
     function createString() {
-      var string = "";
+      string = "";
       for (var step = 0; step < Number(length.value); step++) {
         string = string + character.value.substr(Math.floor(Math.random() * character.value.length),1);
       }
@@ -38,8 +39,7 @@
       //alert(character.value.substr(Math.floor(Math.random() * character.value.length),1));
     }
     function copy() {
-      var copyText = output.value;
-      copyText.select();
+      string.select();
       document.execCommand("copy");
     }
   </script>
