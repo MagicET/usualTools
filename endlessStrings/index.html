@@ -21,7 +21,7 @@
   <label for "inputCharacter">使用する文字:<label>
   <input type="text" id="inputCharacter" placeholder="使用する文字を入力"><br>
   <button id="createButton" onClick="createString()">作成</button><br>
-  <input type="text" readonly="true" id="output" value="エラー"><button onClick="copy()">コピー</button>
+  <input type="text" id="output" value="エラー"><button onClick="copy()">コピー</button>
   
   <script>
     var length = document.getElementById("inputLength");
@@ -36,7 +36,7 @@
         string = string + character.value.substr(Math.floor(Math.random() * character.value.length),1);
       }
       output.value = string;
-      //alert(character.value.substr(Math.floor(Math.random() * character.value.length),1));
+      //alert(character.value.substr(Math.floor(Math.random() * character.value.length),
     }
     function copy() {
       output.focus();
