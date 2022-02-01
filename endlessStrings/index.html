@@ -35,7 +35,7 @@
       for (var step = 0; step < Number(length.value); step++) {
         string = string + character.value.substr(Math.floor(Math.random() * character.value.length),1);
       }
-      output.innerHTML = string + "<button onClick="copy()">コピー</button>";
+      output.innerHTML = string;
       //alert(character.value.substr(Math.floor(Math.random() * character.value.length),1));
     }
     function copy() {
