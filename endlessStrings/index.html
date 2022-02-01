@@ -39,6 +39,7 @@
       //alert(character.value.substr(Math.floor(Math.random() * character.value.length),1));
     }
     function copy() {
+      output.focus();
       output.select();
       document.execCommand("copy");
     }
