@@ -21,7 +21,7 @@
   <label for "inputCharacter">使用する文字:<label>
   <input type="text" id="inputCharacter" placeholder="使用する文字を入力"><br>
   <button id="createButton" onClick="createString()">作成</button><br>
-  <input type="text" id="output" value="エラー"><button onClick="copy()">コピー</button>
+  <textarea id="output" rows="1" cols="30">エラー</textarea><button onClick="copy()">コピー</button>
   
   <script>
     var length = document.getElementById("inputLength");
@@ -43,6 +43,12 @@
       document.execCommand("copy");
       alert("コピーしました")
     }
+
+output.addEventListener('input', kaigyo);
+
+function kaigyo(e) {
+  output.rows = Math.floor((output.value/30) + 1);
+}
   </script>
 </body>
 </html>
