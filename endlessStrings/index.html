@@ -44,11 +44,12 @@
       alert("コピーしました")
     }
 
-output.addEventListener('input', kaigyo);
+    output.addEventListener('input', kaigyo);
 
-function kaigyo(e) {
-  output.rows = Math.floor((output.value/30) + 1);
-}
+    function kaigyo(e) {
+      alert("改行?");
+      output.rows = Math.floor((output.value/30) + 1);
+    }
   </script>
 </body>
 </html>
