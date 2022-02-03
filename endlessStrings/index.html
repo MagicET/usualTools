@@ -32,6 +32,7 @@
     var character = document.getElementById("inputCharacter");
     const button = document.getElementById("createButton");
     var output = document.getElementById("output");
+    let clientHeight = output.clientHeight;
     output.value = "ここに結果を表示";
     var string = "";
     function createString() {
@@ -40,6 +41,12 @@
         string = string + character.value.substr(Math.floor(Math.random() * character.value.length),1);
       }
       output.value = string;
+      //textareaの要素の高さを設定（rows属性で行を指定するなら「px」ではなく「auto」で良いかも！）
+      output.style.height = clientHeight + 'px';
+      //textareaの入力内容の高さを取得
+      let scrollHeight = output.scrollHeight;
+      //textareaの高さに入力内容の高さを設定
+      output.style.height = scrollHeight + 'px';
     }
     function copy() {
       output.focus();
@@ -47,8 +54,6 @@
       document.execCommand("copy");
       alert("コピーしました")
     }
-
-    let clientHeight = output.clientHeight;
 
     //textareaのinputイベント
     output.addEventListener('input', ()=>{
