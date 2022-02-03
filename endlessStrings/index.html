@@ -44,10 +44,10 @@
       alert("コピーしました")
     }
 
+    output.rows = output.clientHeight;
+    
     output.addEventListener('input', kaigyo);
-
     function kaigyo(e) {
-      output.rows = output.clientHeight
       output.rows = output.scrollHeight;
     }
   </script>
