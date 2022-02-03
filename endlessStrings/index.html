@@ -48,6 +48,7 @@
     
     output.addEventListener('input', kaigyo);
     function kaigyo(e) {
+      alert(output.scrollHeight.toString());
       output.rows = output.scrollHeight;
     }
   </script>
