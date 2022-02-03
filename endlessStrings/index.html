@@ -47,7 +47,8 @@
     output.addEventListener('input', kaigyo);
 
     function kaigyo(e) {
-      output.rows = Math.floor((output.value.length/30) + 1);
+      output.rows = output.clientHeight
+      output.rows = output.scrollHeight;
     }
   </script>
 </body>
