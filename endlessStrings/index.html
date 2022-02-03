@@ -44,13 +44,24 @@
       alert("コピーしました")
     }
 
-    output.rows = output.clientHeight;
+    /*output.rows = output.clientHeight;
     
     output.addEventListener('input', kaigyo);
     function kaigyo(e) {
       alert(output.scrollHeight.toString());
       output.rows = output.scrollHeight;
-    }
+    }*/
+    let clientHeight = output.clientHeight;
+
+    //textareaのinputイベント
+    output.addEventListener('input', ()=>{
+      //textareaの要素の高さを設定（rows属性で行を指定するなら「px」ではなく「auto」で良いかも！）
+      output.style.height = clientHeight + 'px';
+      //textareaの入力内容の高さを取得
+      let scrollHeight = output.scrollHeight;
+      //textareaの高さに入力内容の高さを設定
+      output.style.height = scrollHeight + 'px';
+    });
   </script>
 </body>
 </html>
