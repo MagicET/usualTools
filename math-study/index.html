@@ -51,16 +51,18 @@
       question = parseInt(Math.random() * (max.value - min.value) + min.value, 10);
       //answer.readonly = null;
       questionLabel.innerHTML = question * question;
+      print(answer.readonly)
     }
     function checkAnswer(e) {
+      print(e.target.value);
       if (e.target.value == question * question) {
         se.pause();
         se.play();
-        score += 1
-        scoreField.innerHTML = "スコア:" + score
+        score += 1;
+        scoreField.innerHTML = "スコア:" + score;
         question = Math.random() * (max.value - min.value) + min.value;
         questionLabel.innerHTML = question;
-        answer.value = ""
+        answer.value = "";
       }
     }
   </script>
