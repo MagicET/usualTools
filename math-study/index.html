@@ -60,7 +60,7 @@
         se.play();
         score += 1;
         scoreField.innerHTML = "スコア:" + score;
-        question = Math.random() * (max.value - min.value) + min.value;
+        question = parseInt(Math.random() * (max.value - min.value) + min.value, 10);
         questionLabel.innerHTML = question;
         answer.value = "";
       }
