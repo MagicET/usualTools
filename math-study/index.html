@@ -49,7 +49,7 @@
     function startGame() {
       min.readonly = true;
       max.readonly = true;
-      question = parseInt(Math.random(), 10) * (parseInt(max.value, 10) - parseInt(min.value, 10)) + parseInt(min.value, 10);
+      question = parseInt(Math.random() * (parseInt(max.value, 10) - parseInt(min.value, 10)) + parseInt(min.value, 10), 10);
       //answer.readonly = null;
       questionLabel.innerHTML = question * question;
       console.log(answer.readonly)
@@ -61,7 +61,7 @@
         se.play();
         score += 1;
         scoreField.innerHTML = "スコア:" + score;
-        question = parseInt(Math.random(), 10) * (parseInt(max.value, 10) - parseInt(min.value, 10)) + parseInt(min.value, 10);
+        question = parseInt(Math.random() * (parseInt(max.value, 10) - parseInt(min.value, 10)) + parseInt(min.value, 10), 10);
         questionLabel.innerHTML = question;
         answer.value = "";
       }
