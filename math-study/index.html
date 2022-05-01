@@ -51,10 +51,10 @@
       question = parseInt(Math.random() * (max.value - min.value) + min.value, 10);
       //answer.readonly = null;
       questionLabel.innerHTML = question * question;
-      print(answer.readonly)
+      console.log(answer.readonly)
     }
     function checkAnswer(e) {
-      print(e.target.value);
+      console.log(e.target.value);
       if (e.target.value == question * question) {
         se.pause();
         se.play();
