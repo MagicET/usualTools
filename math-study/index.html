@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+
+    <title>数学の勉強</title>
+
+    <style>
+      h2 {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>二乗の形→元の形</h2>
+    <div>
+      <p>出題は</p>
+      <input type="number" id="min" placeholder="最小値">
+      <p>から</p>
+      <input type="number" id="max" placeholder="最大値">
+      <p>まで</p>
+    </div>
+    <button type="button" id="start">スタート</button>
+    <br>
+    <h3 id="question">ここに問題が表示されます</h3>
+    <input type="number" id="answerField" readonly=true placeholder="答えを入力">
+    <p id="score">スコア:0</p>
+    <audio preload="auto" id="se">
+      <source src="./correct.wav" type="audio/mp3">
+    </audio>
+  </body>
+  <script>
+    const min = document.getElementById("min");
+    const max = document.getElementById("max");
+    const start = document.getElementById("start");
+    const questionLabel = document.getElementById("question");
+    const answer = document.getElementById("answerField");
+    const se = document.getElementById("score");
+    const scoreField = document.getElementById("se");
+    var score = 0;
+    var question = 0;
+    
+    start.addEventListener('click', startGame);
+    answer.addEventListener('input', checkAnswer);
+    
+    function startGame() {
+      min.readonly = true;
+      max.readonly = true;
+      question = Math.random() * (max.value - min.value) + min.value;
+      answer.readonly = false;
+      questionLabel.innerHTML = question;
+    }
+    function checkAnswer(e) {
+      if (e.target.value = question) {
+        se.pause();
+        se.play();
+        score += 1
+        scoreField.innerHTML = "スコア:" + score
+        question = Math.random() * (max.value - min.value) + min.value;
+        questionLabel.innerHTML = question;
+        answer.innerHTML = ""
+      }
+    }
+  </script>
+</html>
