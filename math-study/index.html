@@ -49,19 +49,22 @@
     function startGame() {
       min.readonly = true;
       max.readonly = true;
-      question = parseInt(Math.random() * (parseInt(max.value, 10) - parseInt(min.value, 10)) + parseInt(min.value, 10), 10);
+      question = parseInt(Math.random() * (max.value, - min.value) + min.value, 10);
+      question = parseInt(question * question);
       //answer.readonly = null;
-      questionLabel.innerHTML = question * question;
+      questionLabel.innerHTML = question;
       console.log(answer.readonly)
     }
     function checkAnswer(e) {
       console.log(e.target.value);
-      if (e.target.value == question) {
+      console.log(question)
+      if (e.target.value * e.target.value == question) {
         se.pause();
         se.play();
         score += 1;
         scoreField.innerHTML = "スコア:" + score;
-        question = parseInt(Math.random() * (parseInt(max.value, 10) - parseInt(min.value, 10)) + parseInt(min.value, 10), 10);
+        question = parseInt(Math.random() * (max.value, - min.value) + min.value, 10);
+      question = parseInt(question * question);
         questionLabel.innerHTML = question;
         answer.value = "";
       }
