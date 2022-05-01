@@ -21,6 +21,7 @@
       <p>から</p>
       <input type="number" id="max" placeholder="最大値">
       <p>まで</p>
+      <p class="caption">※小数点以下は切り捨てられます</p>
     </div>
     <button type="button" id="start">スタート</button>
     <br>
@@ -48,7 +49,7 @@
     function startGame() {
       min.readonly = true;
       max.readonly = true;
-      question = Math.random() * (parseInt(max.value) - parseInt(min.value)) + parseInt(min.value, 10);
+      question = parseInt(Math.random(), 10) * (parseInt(max.value, 10) - parseInt(min.value, 10)) + parseInt(min.value, 10);
       //answer.readonly = null;
       questionLabel.innerHTML = question * question;
       console.log(answer.readonly)
@@ -60,7 +61,7 @@
         se.play();
         score += 1;
         scoreField.innerHTML = "スコア:" + score;
-        question = Math.random() * (parseInt(max.value) - parseInt(min.value)) + parseInt(min.value, 10);
+        question = parseInt(Math.random(), 10) * (parseInt(max.value, 10) - parseInt(min.value, 10)) + parseInt(min.value, 10);
         questionLabel.innerHTML = question;
         answer.value = "";
       }
