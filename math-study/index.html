@@ -37,8 +37,8 @@
     const start = document.getElementById("start");
     const questionLabel = document.getElementById("question");
     const answer = document.getElementById("answerField");
-    const se = document.getElementById("score");
-    const scoreField = document.getElementById("se");
+    const se = document.getElementById("se");
+    const scoreField = document.getElementById("score");
     var score = 0;
     var question = 0;
     
@@ -55,7 +55,7 @@
     }
     function checkAnswer(e) {
       console.log(e.target.value);
-      if (e.target.value == question * question) {
+      if (e.target.value == question) {
         se.pause();
         se.play();
         score += 1;
