@@ -15,10 +15,40 @@
     body {
       font-family: 'Nunito', 'Zen Maru Gothic', sans-serif;
       color: dimgray;
+      margin: 0;
+    }
+    button {
+      appearance: none;
+      border-radius: 6px;
+      background: silver;
+      padding: 4px 8px;
+      border: 2px solid dimgray;
+      font-family: 'Nunito', 'Zen Maru Gothic', sans-serif;
+      color: dimgray;
+      font-size: 20px;
+      margin: 2px;
+    }
+    input, textarea {
+      appearance: none;
+      border-radius: 6px;
+      background: white;
+      padding: 4px 8px;
+      border: 2px solid dimgray;
+      font-family: 'Nunito', 'Zen Maru Gothic', sans-serif;
+      color: dimgray;
+      font-size: 20px;
+      margin: 2px;
     }
     #output {
       width = 200%;
       height = 75px;
+    }
+    iframe {
+      border: none;
+      width: 100%
+    }
+    #main {
+      width: 80%
     }
   </style>
   
@@ -26,11 +56,18 @@
 
 <body>
   <iframe src="https://magicet.github.io/usualTools/header.html"></iframe>
-  <h2>無限文字列<h2>
-  <p>長さ:<input type="number" id="inputLength" placeholder="長さを入力"></p>
-  <p>使用する文字:<input type="text" id="inputCharacter" placeholder="使用する文字を入力"></p>
-  <button id="createButton" onClick="createString()">作成</button><br>
-  <textarea id="output">エラー<button onClick="copy()"><i class="fa-light fa-copy"></i></button></textarea>
+  <div id="main">
+    <h2>無限文字列<h2>
+    <p>長さ:<input type="number" id="inputLength" placeholder="長さを入力"></p>
+    <p>使用する文字:<input type="text" id="inputCharacter" placeholder="使用する文字を入力"></p>
+    <button id="createButton" onClick="createString()">作成</button><br>
+    <div id="outputArea">
+      <textarea id="output">エラー</textarea>
+      <button onClick="copy()">
+        <i class="fa-light fa-copy"></i>
+      </button>
+    </div>
+  <div>
   
   <script>
     var length = document.getElementById("inputLength");
