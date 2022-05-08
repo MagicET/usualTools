@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9561bd5c13.js" crossorigin="anonymous"></script>
   
   <title>無限文字列</title>
 
@@ -25,13 +26,11 @@
 
 <body>
   <iframe src="https://magicet.github.io/usualTools/header.html"></iframe>
-  <h2>無限文字列 by Tabuchi<h2>
-  <label for "inputLength">長さ:<label>
-  <input type="number" id="inputLength" placeholder="長さを入力"><br>
-  <label for "inputCharacter">使用する文字:<label>
-  <input type="text" id="inputCharacter" placeholder="使用する文字を入力"><br>
+  <h2>無限文字列<h2>
+  <p>長さ:<input type="number" id="inputLength" placeholder="長さを入力"></p>
+  <p>使用する文字:<input type="text" id="inputCharacter" placeholder="使用する文字を入力"></p>
   <button id="createButton" onClick="createString()">作成</button><br>
-  <textarea id="output">エラー</textarea><button onClick="copy()">コピー</button>
+  <textarea id="output">エラー<button onClick="copy()"><i class="fa-light fa-copy"></i></button></textarea>
   
   <script>
     var length = document.getElementById("inputLength");
