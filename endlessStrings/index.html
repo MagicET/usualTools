@@ -12,6 +12,23 @@
   <title>無限文字列</title>
 
   <style>
+    header.header {
+      background: silver;
+      border-bottom: 3px solid dimgray;
+      padding: 2%;
+      font-family: 'Nunito', 'Zen Maru Gothic', sans-serif;
+      color: dimgray;
+      text-align: center;
+    }
+    a.header {
+      text-decoration: none;
+      color: dimgray;
+      font-weight: bold;
+    }
+    h1.header, p.header {
+      margin: 0;
+    }
+    
     body {
       font-family: 'Nunito', 'Zen Maru Gothic', sans-serif;
       color: dimgray;
@@ -55,7 +72,13 @@
 </head>
 
 <body>
-  <iframe src="https://magicet.github.io/usualTools/header.html"></iframe>
+  <header class="header">
+    <div class="header">
+      <a href="https://magicet.github.io/usualTools/" class="header"><h1 class="header">便利ツール</h1></a>
+      <p class="header">さまざまなツールをHTML,JavaScriptで作る。順次追加予定。</p>
+    </div>
+  </header>
+  
   <div id="main">
     <h2>無限文字列<h2>
     <p>長さ:<input type="number" id="inputLength" placeholder="長さを入力"></p>
