@@ -13,6 +13,15 @@
   </style>
   
   <script>
+    //テキストボックスの処理
+    var input = document.getElementById("input");
+    var link = document.getElementById("link");
+    var button = document.getElementById("button");
+    
+    function changeLink() {
+      link.href = input.innerHTML;
+    }
+    
     var cookie = decodeURI(document.cookie.split(";")[0].split("=")[1]).split(",");
     //お気に入り読み込み処理
     function loadLinks() {
@@ -41,15 +50,6 @@
       cookie.splice(index, 1)
       saveCookie();
       loadLinks();
-    }
-   
-    //テキストボックスの処理
-    var input = document.getElementById("input");
-    var link = document.getElementById("link");
-    var button = document.getElementById("button");
-    
-    function changeLink() {
-      link.href = input.innerHTML;
     }
     
     function addLink() {
