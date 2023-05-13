@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+
+  <title>便利ツール</title>
+
+  <style>
+    h2 {
+      font-family: sans-serif;
+    }
+  </style>
+  
+  <script>
+    var cookie = decodeURI(document.cookie.split(";")[0].split("=")[1]).split(",");
+    //お気に入り読み込み処理
+    function loadLinks() {
+      let linkBox = document.getElementById("linkBox");
+      
+      while(linkBox.firstChild) {
+        linkBox.removeChild(linkBox.firstChild);
+      }
+      
+      for (let i = 0; i < cookie.length; i++) {
+        let newLink = document.createElement('p');
+        let innerA = document.createElement('a');
+        innerA.innerHTML = cookie[i];
+        innerA.href = cookie[i];
+        newLink.appendChild(innerA);
+        let innerDel = document.createElement('button');
+        innerDel.onclick = ("deleteLink(" + i + ")");
+        innerDel.innerHTML = "削除";
+        newLink.appendChild(innerDel);
+        
+        linkBox.appendChild(newLink);
+      }
+    }
+    
+    function deleteLink(index) {
+      cookie.splice(index, 1)
+      saveCookie();
+      loadLinks();
+    }
+   
+    //テキストボックスの処理
+    var input = document.getElementById("input");
+    var link = document.getElementById("link");
+    var button = document.getElementById("button");
+    
+    function changeLink() {
+      link.href = input.innerHTML;
+    }
+    
+    function addLink() {
+      cookie[cookie.length] = input.innerHTML;
+      
+      saveCookie();
+    }
+    
+    function saveCookie() {
+      var output = cookie[0];
+      for (let i = 1; i < cookie.length; i++) {
+        output += "," + cookie[i];
+      }
+      
+      document.cookie = 'links=' + encodeURI(output) + '; max-age=2592000';
+      
+      loadLinks();
+    }
+    
+    loadLinks();
+  </script>
+</head>
+
+<body>
+  <p>
+    <input type=text id="input" value="" onchange="changeLink()">
+    <button id="button" onclick="addLink()">お気に入り</button>
+    <a href="" id="link">開く</a>
+  </p>
+  </br>
+  <div id="linkBox">
+  </div>
+</body>
+</html>
