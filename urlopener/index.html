@@ -15,7 +15,7 @@
 
 <body>
   <p>
-    <input type=text id="input" value="" onchange="changeLink()">
+    <input type=text id="input" onchange="changeLink()">
     <button id="button" onclick="addLink()">お気に入り</button>
     <a href="" id="link">開く</a>
   </p>
@@ -50,7 +50,7 @@
         innerA.href = cookie[i];
         newLink.appendChild(innerA);
         let innerDel = document.createElement('button');
-        innerDel.onclick = ("deleteLink(" + i + ")");
+        innerDel.onclick = ("deleteLink(" + i + ");");
         innerDel.innerHTML = "削除";
         newLink.appendChild(innerDel);
         
@@ -59,18 +59,23 @@
     }
     
     function deleteLink(index) {
-      cookie.splice(index, 1)
+      console.log("Try to delete");
+      cookie.splice(index, 1);
       saveCookie();
       loadLinks();
     }
     
     function addLink() {
+      
+      console.log("Try to add");
       cookie[cookie.length] = input.innerHTML;
       
       saveCookie();
     }
     
     function saveCookie() {
+      
+      console.log("Try to save");
       var output = cookie[0];
       for (let i = 1; i < cookie.length; i++) {
         output += "," + cookie[i];
