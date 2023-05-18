@@ -30,7 +30,8 @@
     var button = document.getElementById("button");
     
     function changeLink() {
-      link.href = input.innerHTML;
+      link.href = input.innerText;
+      console.log(link.href);
     }
     
     var cookie = decodeURI(document.cookie.split(";")[0].split("=")[1]).split(",");
