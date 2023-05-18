@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>便利ツール</title>
+  <title>URLオープナー</title>
 
   <style>
     h2 {
@@ -30,8 +30,10 @@
     var button = document.getElementById("button");
     
     function changeLink() {
-      link.href = input.innerText;
-      console.log(link.href);
+      link.setAttribute('href', input.innerText);
+      console.log("innerText:" + input.innerText);
+      console.log("innerHTML:" + input.innerHTML);
+      console.log("href" + link.href);
     }
     
     var cookie = decodeURI(document.cookie.split(";")[0].split("=")[1]).split(",");
