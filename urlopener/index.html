@@ -27,8 +27,10 @@
     function loadLinks() {
       let linkBox = document.getElementById("linkBox");
       
-      while(linkBox.hasChildNodes()) {
-        linkBox.removeChild(linkBox.firstChild);
+      if (linkBox != null) {
+        while(linkBox.hasChildNodes()) {
+          linkBox.removeChild(linkBox.firstChild);
+        }
       }
       
       for (let i = 0; i < cookie.length; i++) {
