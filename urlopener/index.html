@@ -15,7 +15,7 @@
 
 <body>
   <p>
-    <input type=text id="input" on="changeLink()">
+    <input type=text id="input" oninput="changeLink()">
     <button id="button" onclick="addLink()">お気に入り</button>
     <a href="" id="link">開く</a>
   </p>
@@ -38,6 +38,8 @@
     var cookie = decodeURI(document.cookie.split(";")[0].split("=")[1]).split(",");
     //お気に入り読み込み処理
     function loadLinks() {
+      print(document.cookie);
+      
       var linkBox = document.getElementById("linkBox");
       
       while(linkBox.hasChildNodes()) {
