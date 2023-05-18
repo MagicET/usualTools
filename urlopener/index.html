@@ -30,7 +30,7 @@
     var button = document.getElementById("button");
     
     function changeLink() {
-      link.setAttribute('href', input.value);
+      link.setAttribute('href', "//" + input.value);
       console.log("value:" + input.value);
       console.log("href:" + link.href);
     }
@@ -50,7 +50,7 @@
         let newLink = document.createElement('p');
         let innerA = document.createElement('a');
         innerA.innerHTML = cookie[i];
-        innerA.href = cookie[i];
+        innerA.setAttribute('href', "//" + cookie[i]);
         newLink.appendChild(innerA);
         let innerDel = document.createElement('button');
         innerDel.onclick = ("deleteLink(" + i + ");");
