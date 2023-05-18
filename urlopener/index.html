@@ -15,7 +15,7 @@
 
 <body>
   <p>
-    <input type=text id="input" onchange="changeLink()">
+    <input type=text id="input" on="changeLink()">
     <button id="button" onclick="addLink()">お気に入り</button>
     <a href="" id="link">開く</a>
   </p>
@@ -30,10 +30,9 @@
     var button = document.getElementById("button");
     
     function changeLink() {
-      link.setAttribute('href', input.innerText);
-      console.log("innerText:" + input.innerText);
-      console.log("innerHTML:" + input.innerHTML);
-      console.log("href" + link.href);
+      link.setAttribute('href', input.value);
+      console.log("value:" + input.value);
+      console.log("href:" + link.href);
     }
     
     var cookie = decodeURI(document.cookie.split(";")[0].split("=")[1]).split(",");
@@ -70,7 +69,7 @@
     function addLink() {
       
       console.log("Try to add");
-      cookie[cookie.length] = input.innerHTML;
+      cookie[cookie.length] = input.value;
       
       saveCookie();
     }
