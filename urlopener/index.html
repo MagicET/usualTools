@@ -11,6 +11,17 @@
       font-family: sans-serif;
     }
   </style>
+</head>
+
+<body>
+  <p>
+    <input type=text id="input" value="" onchange="changeLink()">
+    <button id="button" onclick="addLink()">お気に入り</button>
+    <a href="" id="link">開く</a>
+  </p>
+  </br>
+  <div id="linkBox">
+  </div>
   
   <script>
     //テキストボックスの処理
@@ -25,12 +36,10 @@
     var cookie = decodeURI(document.cookie.split(";")[0].split("=")[1]).split(",");
     //お気に入り読み込み処理
     function loadLinks() {
-      let linkBox = document.getElementById("linkBox");
+      var linkBox = document.getElementById("linkBox");
       
-      if (linkBox != null) {
-        while(linkBox.hasChildNodes()) {
+      while(linkBox.hasChildNodes()) {
           linkBox.removeChild(linkBox.firstChild);
-        }
       }
       
       for (let i = 0; i < cookie.length; i++) {
@@ -73,16 +82,5 @@
     
     loadLinks();
   </script>
-</head>
-
-<body>
-  <p>
-    <input type=text id="input" value="" onchange="changeLink()">
-    <button id="button" onclick="addLink()">お気に入り</button>
-    <a href="" id="link">開く</a>
-  </p>
-  </br>
-  <div id="linkBox">
-  </div>
 </body>
 </html>
