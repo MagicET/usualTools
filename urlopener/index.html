@@ -27,7 +27,7 @@
     function loadLinks() {
       let linkBox = document.getElementById("linkBox");
       
-      while(linkBox.firstChild) {
+      while(linkBox.hasChildNodes()) {
         linkBox.removeChild(linkBox.firstChild);
       }
       
