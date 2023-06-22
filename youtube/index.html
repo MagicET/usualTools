@@ -7,10 +7,20 @@
   <title>YouTubeビューワー</title>
 
 	<script>
+  	function getParam(name, url) {
+    	if (!url) url = window.location.href;
+    	name = name.replace(/[\[\]]/g, "\\$&");
+    	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    	if (!results) return null;
+    	if (!results[2]) return '';
+    	return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+    
     function placePlayer() {
       console.log("Try to change");
-      var videoID = decodeuricomponent(location.search.match(/id=(.*?)(&|$)/)[1]);
-    
+      var videoID = getParam('id');
+      
     	let player = document.createElement('iframe');
       player.id = "player";
       player.width = 560;
