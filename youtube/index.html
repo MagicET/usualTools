@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+
+  <title>YouTubeビューワー</title>
+
+</head>
+
+<body>
+  <p>
+    <iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/rHxUIBUXOxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </p>
+  
+  <script>
+    //テキストボックスの処理
+    var player = document.getElementById("player");
+    
+    function playerChange() {
+      
+      console.log("Try to change");
+      var videoID = decodeuricomponent(location.search.match(/id=(.*?)(&|$)/)[1]);
+    
+      player.src = "https://www.youtube.com/embed/" + videoID;
+    }
+    
+    playerChange();
+  </script>
+</body>
