@@ -6,25 +6,28 @@
 
   <title>YouTubeビューワー</title>
 
-</head>
-
-<body>
-  <p>
-    <iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/rHxUIBUXOxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </p>
-  
-  <script>
-    //テキストボックスの処理
-    var player = document.getElementById("player");
-    
-    function playerChange() {
-      
+	<script>
+    function placePlayer() {
       console.log("Try to change");
       var videoID = decodeuricomponent(location.search.match(/id=(.*?)(&|$)/)[1]);
     
+    	let player = document.createElement('iframe');
+      player.id = "player";
+      player.width = 560;
+      player.height = 315;
       player.src = "https://www.youtube.com/embed/" + videoID;
+      player.title = "YouTube video player";
+      player.frameborder = 0;
+      player.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      player.allowfullscreen = true;
+      
+      var body = document.getElementById("body");
     }
     
-    playerChange();
+    placePlayer();
   </script>
+</head>
+
+<body id="body">
+  
 </body>
