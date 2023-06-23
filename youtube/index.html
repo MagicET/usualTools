@@ -5,8 +5,11 @@
   <meta charset="utf-8">
 
   <title>YouTubeビューワー</title>
+</head>
 
-	<script>
+<body id="body">
+  <p id="pID">id here</p>
+  <script>
   	function getParam(name, url) {
     	if (!url) url = window.location.href;
     	name = name.replace(/[\[\]]/g, "\\$&");
@@ -36,9 +39,7 @@
     }
     
     placePlayer();
+    document.getElementById("pID").innerHTML = getParam('id');
   </script>
-</head>
-
-<body id="body">
-  
 </body>
+</html>
