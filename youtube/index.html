@@ -5,11 +5,8 @@
   <meta charset="utf-8">
 
   <title>YouTubeビューワー</title>
-</head>
-
-<body id="body">
-  <p id="pID">id here</p>
-  <script>
+  
+    <script>
   	function getParam(name, url) {
     	if (!url) url = window.location.href;
     	name = name.replace(/[\[\]]/g, "\\$&");
@@ -34,12 +31,18 @@
       player.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       player.allowfullscreen = true;
       
-      var body = document.getElementById("body");
-      body.appendChild(player);
+      document.body.appendChild(player);
     }
     
     placePlayer();
-    document.getElementById("pID").innerHTML = getParam('id');
+    
+    let p = document.createElement('p');
+    p.innerHTML = getParam('id');
+    document.body.appendChild(p);
   </script>
+</head>
+
+<body>
+  
 </body>
 </html>
