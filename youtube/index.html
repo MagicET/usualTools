@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  	<input type=text id="idInput" oninput="changeLink()">
+    <a href="" id="link">開く</a>
     <script>
   	function getParam(name, url) {
     	if (!url) url = window.location.href;
@@ -38,6 +40,12 @@
       player.allowfullscreen = true;
       
       document.body.appendChild(player);
+    }
+    
+    function changeLink() {
+      var inputId = document.getElementById("idInput");
+      var a = document.getElementById("link");
+    	link.setAttribute('href', "https://magicet.github.io/usualTools/youtube/index.html?id=" + idInput.value);
     }
     
     placePlayer();
