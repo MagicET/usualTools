@@ -23,7 +23,7 @@
     	if (!results) return null;
     	if (!results[2]) return '';
     	return decodeURIComponent(results[2].replace(/\+/g, " "));
-		}
+	}
     
     function placePlayer() {
       console.log("Try to change");
@@ -45,7 +45,12 @@
     function changeLink() {
       var inputId = document.getElementById("idInput");
       var a = document.getElementById("link");
-    	link.setAttribute('href', "https://magicet.github.io/usualTools/youtube/index.html?id=" + idInput.value);
+	    if inputId.indexOf("watch?v=") == -1 {
+		    link.setAttribute('href', "https://magicet.github.io/usualTools/youtube/index.html?id=" + idInput.value);
+	    } else {
+		    var gettedId = getParam('v', inputId.value);
+		    link.setAttribute('href', "https://magicet.github.io/usualTools/youtube/index.html?id=" + gettedId);
+	    }
     }
     
     placePlayer();
