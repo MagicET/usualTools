@@ -61,6 +61,7 @@
         }
         newLink.appendChild(innerA);
         let innerDel = document.createElement('button');
+        innerDel.addEventListener('click',　{index: i, handleEvent: deleteLink});
         innerDel.onclick = ("deleteLink(" + i + ");");
         innerDel.innerHTML = "削除";
         newLink.appendChild(innerDel);
@@ -69,9 +70,9 @@
       }
     }
     
-    function deleteLink(index) {
+    function deleteLink(e) {
       console.log("Try to delete");
-      cookie.splice(index, 1);
+      cookie.splice(this.index, 1);
       saveCookie();
       loadLinks();
     }
