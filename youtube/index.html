@@ -45,7 +45,7 @@
     function changeLink() {
       var inputId = document.getElementById("idInput");
       var a = document.getElementById("link");
-	    if inputId.indexOf("watch?v=") == -1 {
+	    if inputId.value.indexOf("watch?v=") == -1 {
 		    link.setAttribute('href', "https://magicet.github.io/usualTools/youtube/index.html?id=" + idInput.value);
 	    } else {
 		    var gettedId = getParam('v', inputId.value);
