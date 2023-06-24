@@ -30,7 +30,11 @@
     var button = document.getElementById("button");
     
     function changeLink() {
-      link.setAttribute('href', input.value);
+      if(input.value.indexOf("http") == -1) {
+        link.setAttribute('href', "//" + input.value);
+      } else {
+        link.setAttribute('href', input.value);
+      }
       console.log("value:" + input.value);
       console.log("href:" + link.href);
     }
@@ -50,7 +54,11 @@
         let newLink = document.createElement('p');
         let innerA = document.createElement('a');
         innerA.innerHTML = cookie[i];
-        innerA.setAttribute('href', "//" + cookie[i]);
+        if(cookie[i].indexOf("http") == -1) {
+          innerA.setAttribute('href', "//" + cookie[i]);
+        } else {
+          innerA.setAttribute('href', cookie[i]);
+        }
         newLink.appendChild(innerA);
         let innerDel = document.createElement('button');
         innerDel.onclick = ("deleteLink(" + i + ");");
