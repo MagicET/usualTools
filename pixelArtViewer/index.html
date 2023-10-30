@@ -29,28 +29,28 @@
         
         <script>
             // 1. ファイル選択後に呼ばれるイベント
-					document.getElementById("input").on("change", function (e) {
-            const p = document.getElementById("p");
+					document.getElementById("input").addEventListener('change', (event) => {
+ 						const p = document.getElementById("p");
           	p.innerHTML = "event fired";
           
-          	if (!e.target.files[0]) {
+          	if (!event.target.files[0]) {
               p.innerHTML = "file missing";
               return;
             }
 
     				// 2. 画像ファイルの読み込みクラス
-    				var reader = new FileReader();
+    				const reader = new FileReader();
 
     				// 3. 準備が終わったら、id=sample1のsrc属性に選択した画像ファイルの情報を設定
-    				reader.onload = function (e) {
-        			document.getElementById("image").attr("src", e.target.result);
+    				reader.onload = (event) => {
+        			document.getElementById("image").src = event.target.result;
     				}
 
     				// 4. 読み込んだ画像ファイルをURLに変換
-    				reader.readAsDataURL(e.target.files[0]);
+    				reader.readAsDataURL(event.target.files[0]);
             
             p.innerHTML = "event ended correctly";
-					});
+					})
     	</script>
  	</body>
 </html>
