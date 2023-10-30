@@ -24,12 +24,16 @@
 	</head>
 
  	<body>
+    <p id="Hello"></p>
 		<label>
 			<img src="./placeholder.png" id="image">
         	<input type="file" accept="image/png, image/jpeg" id="input" />
     	</label>
         
         <script>
+        	const p = getElementById("p");
+          p.innerHTML = "event fired"
+          
             // 1. ファイル選択後に呼ばれるイベント
 					$("#input").on("change", function (e) {
 
@@ -43,7 +47,9 @@
 
     				// 4. 読み込んだ画像ファイルをURLに変換
     				reader.readAsDataURL(e.target.files[0]);
+            
 					});
+          p.innerHTML = "event ended"
     	</script>
  	</body>
 </html>
