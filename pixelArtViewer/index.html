@@ -2,24 +2,45 @@
 
 <html lang="ja">
 
-  <head>
-    <meta charset="utf-8">
+	<head>
+    	<meta charset="utf-8">
 
-  	<title>Image Viewer</title>
+  		<title>Image Viewer</title>
 
 		<style>
-
-  	</style>
-
-		<script>
-
-		</script>
+        	body {
+                overflow: hidden;
+            }
+            
+    		img {
+        		width: 100%;
+				image-rendering: pixelated;
+        	}
+            
+        	input[type="file"] {
+            	display: none;
+        	}
+  		</style>
 	</head>
 
-  <body>
-    <label>
-      <img src="./placeholder.png">
-    </label>
-  </body>
-
+ 	<body>
+		<label>
+			<img src="./placeholder.png" id="image">
+        	<input type="file" accept="image/png, image/jpeg" id="input" />
+    	</label>
+        
+        <script>
+        	document.getElementById("input").addEventListener('change', function(e) {
+                let image = document.getElementById("image");
+                
+                var reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    image.attr("src", e.target.result);
+                }
+                
+                reader.readAsDataURL(e.target.files[0]);
+            })
+    	</script>
+ 	</body>
 </html>
