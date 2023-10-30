@@ -30,6 +30,11 @@
       input[type="file"] {
         display: none;
       }
+      
+      @media (prefers-color-scheme: dark) {
+  				body {
+					background-color: #000000;
+				}
   	</style>
 	</head>
 
@@ -56,6 +61,8 @@
 
     				// 4. 読み込んだ画像ファイルをURLに変換
     				reader.readAsDataURL(event.target.files[0]);
+            
+            document.title = event.target.files[0].name;
 					})
     	</script>
  	</body>
