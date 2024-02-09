@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs/>
+<path d="M0 0L512 0L512 512L0 512L0 0Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none" vectornator:artboardBackground="true"/>
+<g id="レイヤー-1" vectornator:layerName="レイヤー 1">
+<g opacity="1" vectornator:layerName="グループ 1">
+<path d="M320 160L352 160L352 192L320 192L320 160Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="長方形 6"/>
+<path d="M144 96C117.49 96 96 117.49 96 144L96 368C96 394.51 117.49 416 144 416L384 416L384 384L144 384C135.163 384 128 376.837 128 368L128 144C128 135.163 135.163 128 144 128L384 128L384 96L144 96ZM384 128L384 384L416 384L416 128L384 128Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="曲線 2"/>
+<path d="M256 192L256 208L160 304L160 336C160 344.837 167.163 352 176 352L256 352L288 352L320 352L352 352L352 256L320 256L320 224L288 224L288 192L256 192Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="曲線 3"/>
+<path d="M160 256L160.256 190.491L192 224L160 256Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="曲線 4"/>
+</g>
+</g>
+</svg>
