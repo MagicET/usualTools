@@ -4,9 +4,13 @@
 
 	<head>
 		<link rel="icon" href="favicon.ico" sizes="any"><!-- 32×32 -->
+		<link rel="icon" href="favicon_dark.ico" sizes="any" media="(prefers-color-scheme: dark)">
 		<link rel="icon" href="favicon_svg.svg" type="image/svg+xml">
 		<link rel="apple-touch-icon" href="favicon_180.png"><!-- 180×180 -->
 		<link rel="manifest" href="manifest.json">
+		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  		<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  		<meta name="theme-color" content="ffffff">
     		<meta charset="utf-8">
 
   		<title>Pixie</title>
@@ -45,7 +49,7 @@
 
  	<body>
 		<label>
-			<img src="./favicon_512.PNG" id="image">
+			<img src="favicon_512.PNG" id="image">
         	<input type="file" accept="image/png, image/jpeg, image/gif, image/bmp" id="input" />
     	</label>
         
