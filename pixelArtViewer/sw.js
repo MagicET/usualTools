@@ -1,5 +1,6 @@
 var CACHE_NAME = 'pixelArtViewer';
 var urlsToCache = [
+    '/usualTools/pixelArtViewer/index.html'
     '/usualTools/pixelArtViewer/favicon_512.PNG'
 ];
 
