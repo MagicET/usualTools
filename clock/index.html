@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap&text=0123456789:SunMonTueWedThuFriSatJanFebMarAprMayJunJulAugSepOctNovDec,');
+
+        body {
+            background-color: black;
+        }
+
+        #clocks div {
+            position: absolute;
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 500;
+            font-style: normal;
+
+            width: 100vw;
+            line-height: 100vh;
+            vertical-align: middle;
+            text-align: center;
+            color: #ccc;
+            
+            font-size: 20vw;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+            transform: scaleY(1);
+
+            top: 0;
+            transition-property: top, opacity, transform;
+            transition-duration: 0.5s;
+            transition-behavior: ease-in-out;
+        }
+
+        #clocks div:not(:has(+ .selected)):not(.selected):not(#clocks:has(.selected:first-child) div:nth-last-child(1)) {
+            transform: scaleY(0);
+            top: -100vh !important;
+            opacity: 50%;
+            transition: none;
+        }
+        #clocks div:has(+ .selected), #clocks:has(.selected:first-child) div:nth-last-child(1) {
+            top: +100vh !important;
+            transform: scaleY(0);
+            opacity: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="clocks"></div>
+
+    <script>
+        let index = 0;
+
+        const clocks = document.getElementById("clocks");
+        
+        const formats = [
+            new Intl.DateTimeFormat("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+                hourCycle: "h24"
+            }),
+            new Intl.DateTimeFormat("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hourCycle: "h24"
+            }),
+            new Intl.DateTimeFormat("en-US", {
+                month: "short",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hourCycle: "h24"
+            })
+        ]
+
+        const styles = [
+            "font-size: 30vw;",
+            "font-size: 20vw;",
+            "font-size: 10vw; line-height: 50vh;"
+        ]
+
+        function update() {
+            const date = new Date()
+            document.title = formats[index].format(date)
+            for (let i = 0; i < formats.length; i++) {
+                clocks.childNodes[i].innerText = formats[i].format(date)
+            }
+            console.log(formats[1].format(date), date.getMilliseconds())
+        }
+
+        for (let i = 0; i < formats.length; i++) {
+            const div = document.createElement("div");
+            div.style = styles[i];
+            clocks.appendChild(div);
+        }
+
+        clocks.childNodes[index].className = "selected";
+
+        update();
+
+        clocks.addEventListener("click", (e) => {
+            console.log("clicked");
+            for (let i = 0; i < formats.length; i++) {
+                clocks.childNodes[i].className = "";
+            }
+            index++;
+            if (index >= formats.length) {
+                index = 0;
+            }
+            clocks.childNodes[index].className = "selected";
+        })
+
+        setTimeout(() => {
+            setInterval(() => update(), 1000)
+        }, new Date().getMilliseconds())
+    </script>
+</body>
+</html>
